@@ -1,6 +1,6 @@
 # ioc-tour
 
-The purpose of this repository is to have an IoC container that is as simple as possible for education purpoces, while shines light on most of the "magic" features that Asp.Net DI has (i.e: automatic dependency resolution, lifetimes etc).
+The purpose of this repository is to have an IoC container that is as simple as possible for education purpoces, while shines light on most of the "magic" features that Asp.Net DI has (i.e: automatic dependency resolution, lifetimes etc). The current implementation is written in .NET 8.
 
 ## Solution structure
 
