@@ -2,6 +2,7 @@
 using DIContainer.Interfaces;
 using DIContainer.Util;
 using System.Reflection;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DIContainer
 {
@@ -24,8 +25,11 @@ namespace DIContainer
         /// <exception cref="InvalidOperationException"> thrown if the class is not found. </exception>
         public IBase GetInstance<IBase>()
         {
-            ClassInfo? info = ClassCollection.GetClassInfo<IBase>() 
-                ?? throw new InvalidOperationException("The given class was not registered.");
+            var dependencyStack = new Stack<ConstructorInfo>();
+            var instances = new List<object>();
+
+            ClassInfo? info = ClassCollection.GetClassInfo<IBase>()
+            ?? throw new InvalidOperationException("The given class was not registered.");
 
             ConstructorInfo[] constructors = info.Implementation.GetConstructors();
 
@@ -33,7 +37,8 @@ namespace DIContainer
                 throw new InvalidOperationException("The given class does not have any public constructors!");
 
             ConstructorInfo con = constructors[0];
-            return (IBase) con.Invoke(null);
+
+            return (IBase) con.Invoke(GetDependencies(con));
         }
 
         /// <summary>
@@ -42,5 +47,31 @@ namespace DIContainer
         /// <returns></returns>
         public static IContainerBuilder CreateBuilder()
             => new ContainerBuilder();
+
+
+        /// <summary>
+        /// Finds and instantiates the dependencies for the given constructor.
+        /// </summary>
+        /// <param name="con"></param>
+        /// <returns></returns>
+        private object?[] GetDependencies(ConstructorInfo con)
+        {
+            var parameters = con.GetParameters();
+            var dependencies = parameters.Select(param =>
+            {
+                ClassInfo? info = ClassCollection.GetClassInfo(param.ParameterType)
+                    ?? throw new InvalidOperationException("The given class was not registered.");
+
+                var constructors = info.Implementation.GetConstructors();
+
+                if (constructors.Length == 0)
+                    throw new InvalidOperationException($"The service with the name {info.Implementation} could not be instantiated, because it has no public constructor.");
+
+                var dependencyConstr = constructors[0];
+                return dependencyConstr.Invoke(GetDependencies(dependencyConstr));
+            });
+
+            return dependencies.ToArray();
+        }
     }
 }

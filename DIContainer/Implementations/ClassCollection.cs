@@ -31,6 +31,9 @@ namespace DIContainer.Implementations
         }
 
         public ClassInfo? GetClassInfo<IBase>()
-            => Classes.FirstOrDefault(ci => ci.Base == typeof(IBase) || ci.Implementation == typeof(IBase));
+            => GetClassInfo(typeof(IBase));
+
+        public ClassInfo? GetClassInfo(Type classType)
+            => Classes.FirstOrDefault(ci => ci.Base == classType || ci.Implementation == classType);
     }
 }

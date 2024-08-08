@@ -36,5 +36,12 @@ namespace DIContainer.Interfaces
         /// <typeparam name="IBase"></typeparam>
         /// <returns> The information of the class, together with its implementation, if registered. </returns>
         ClassInfo? GetClassInfo<IBase>();
+
+        /// <summary>
+        /// Tries te get the information of the class requested.
+        /// </summary>
+        /// <param name="classType"></param>
+        /// <returns> The information of the class, together with its implementation, if registered. </returns>
+        ClassInfo? GetClassInfo(Type classType);
     }
 }
