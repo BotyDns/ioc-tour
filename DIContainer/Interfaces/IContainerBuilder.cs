@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DIContainer.Interfaces
 {
+
     public interface IContainerBuilder
     {
         IClassCollection ClassCollection { get; }

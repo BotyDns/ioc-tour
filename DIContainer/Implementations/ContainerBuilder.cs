@@ -9,11 +9,17 @@ namespace DIContainer.Implementations
 {
     class ContainerBuilder : IContainerBuilder
     {
-        public IClassCollection ClassCollection => throw new NotImplementedException();
+        public IClassCollection ClassCollection { get; set; }
+
+        public ContainerBuilder()
+        {
+            ClassCollection = new ClassCollection();
+        }
 
         public DIContainer Build()
-        {
-            throw new NotImplementedException();
-        }
+            => new DIContainer()
+            {
+                ClassCollection = ClassCollection
+            };
     }
 }

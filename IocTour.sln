@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IocTour", "IocTour\IocTour.csproj", "{2086EED2-0532-48D2-BE3E-79350F9AC268}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IocTour", "IocTour\IocTour.csproj", "{2086EED2-0532-48D2-BE3E-79350F9AC268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIContainer", "DIContainer\DIContainer.csproj", "{EB2EE6C3-4E2A-4020-8B91-95247B66A9EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiTests", "DiTests\DiTests.csproj", "{80D87C5C-2F86-41A1-ADBE-47A2509549DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{2086EED2-0532-48D2-BE3E-79350F9AC268}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2086EED2-0532-48D2-BE3E-79350F9AC268}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2086EED2-0532-48D2-BE3E-79350F9AC268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2EE6C3-4E2A-4020-8B91-95247B66A9EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2EE6C3-4E2A-4020-8B91-95247B66A9EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2EE6C3-4E2A-4020-8B91-95247B66A9EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2EE6C3-4E2A-4020-8B91-95247B66A9EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D87C5C-2F86-41A1-ADBE-47A2509549DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D87C5C-2F86-41A1-ADBE-47A2509549DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D87C5C-2F86-41A1-ADBE-47A2509549DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D87C5C-2F86-41A1-ADBE-47A2509549DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
-﻿using DIContainer.Interfaces;
+﻿using DIContainer.Implementations;
+using DIContainer.Interfaces;
 using DIContainer.Util;
 using System.Reflection;
 
@@ -9,11 +10,10 @@ namespace DIContainer
     /// </summary>
     public class DIContainer
     {
-        public IClassCollection ClassCollection { get; init; }
+        public IClassCollection ClassCollection { get; init; } = null!;
 
-        public DIContainer(IClassCollection classCollection)
-        {
-            ClassCollection = classCollection;
+        public DIContainer()
+        { 
         }
 
         /// <summary>
@@ -35,5 +35,12 @@ namespace DIContainer
             ConstructorInfo con = constructors[0];
             return (IBase) con.Invoke(null);
         }
+
+        /// <summary>
+        /// Creates a container builder to help create and configure the DI Container.
+        /// </summary>
+        /// <returns></returns>
+        public static IContainerBuilder CreateBuilder()
+            => new ContainerBuilder();
     }
 }
