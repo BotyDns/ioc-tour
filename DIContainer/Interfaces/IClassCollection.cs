@@ -26,7 +26,8 @@ namespace DIContainer.Interfaces
         /// <typeparam name="TBase"></typeparam>
         /// <typeparam name="TClass"></typeparam>
         /// <returns></returns>
-        IClassCollection AddClass<TBase, TClass>();
+        IClassCollection AddClass<TBase, TClass>()
+            where TClass : TBase;
 
         
         /// <summary>

@@ -23,9 +23,10 @@ namespace DIContainer.Implementations
             return this;
         }
 
-        public IClassCollection AddClass<TInterface, TClass>()
+        public IClassCollection AddClass<TBase, TClass>()
+            where TClass : TBase
         {
-            Classes.Add(new ClassInfo(typeof(TClass), typeof(TInterface)));
+            Classes.Add(new ClassInfo(typeof(TClass), typeof(TBase)));
             return this;
         }
 
