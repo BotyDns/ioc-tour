@@ -1,5 +1,4 @@
-using DIContainer;
-using DIContainer.Interfaces;
+using DiContainer.Interfaces;
 using DiTests.Classes;
 
 namespace DiTests
@@ -12,7 +11,7 @@ namespace DiTests
         [TestInitialize]
         public void Init()
         {
-            Builder = DIContainer.DIContainer.CreateBuilder();
+            Builder = DiContainer.DIContainer.CreateBuilder();
         }
 
         [TestMethod]

@@ -1,10 +1,9 @@
-﻿using DIContainer.Implementations;
-using DIContainer.Interfaces;
-using DIContainer.Util;
+﻿using DiContainer.Implementations;
+using DiContainer.Interfaces;
+using DiContainer.Util;
 using System.Reflection;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace DIContainer
+namespace DiContainer
 {
     /// <summary>
     /// The DI container is the heart of dependency injection in this project.

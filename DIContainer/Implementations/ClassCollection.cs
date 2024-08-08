@@ -1,12 +1,7 @@
-﻿using DIContainer.Interfaces;
-using DIContainer.Util;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DiContainer.Interfaces;
+using DiContainer.Util;
 
-namespace DIContainer.Implementations
+namespace DiContainer.Implementations
 {
     class ClassCollection : IClassCollection
     {

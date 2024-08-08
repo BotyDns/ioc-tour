@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DIContainer.Interfaces;
+﻿using DiContainer.Interfaces;
 
-namespace DIContainer.Implementations
+namespace DiContainer.Implementations
 {
     class ContainerBuilder : IContainerBuilder
     {

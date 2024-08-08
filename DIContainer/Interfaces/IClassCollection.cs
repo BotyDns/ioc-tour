@@ -1,11 +1,6 @@
-﻿using DIContainer.Util;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DiContainer.Util;
 
-namespace DIContainer.Interfaces
+namespace DiContainer.Interfaces
 {
     /// <summary>
     /// The class collection contains all classes that have been registered to the DI container.

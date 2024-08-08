@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DIContainer.Util
+﻿namespace DiContainer.Util
 {
     /// <summary>
     /// Describes the information needed for the DI to be able to search and instantiate a class.
